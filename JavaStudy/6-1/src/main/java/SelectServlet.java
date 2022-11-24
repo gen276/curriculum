@@ -1,5 +1,3 @@
-package selectServlet;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -14,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
  * 問①・②の回答をお願いします。
  *
  */
-
 public class SelectServlet extends HttpServlet {
     
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -25,17 +22,6 @@ public class SelectServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         // 問② エビデンスと同じ表示になるように修正しましょう。
-      out.println("<body>" ); 
-      out.println("<h3>" );
-      out.println("今は" + value + "です。" );
-      out.println("</h3>" );
-      out.println("</body>" );
+       out.println("今は" + value + "月です。" );
     }
 }
-
-
-//out.println("<body>" ); 
-//out.println("<h3>" );
-//out.println("今は" + value + "です。" );
-//out.println("</h3>" );
-//out.println("</body>" );
