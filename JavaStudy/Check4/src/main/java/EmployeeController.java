@@ -1,7 +1,5 @@
-package controller;
-
 /**
- * 社員情報管理コントローラー
+ * 社員情報管理コントローラ
  */
  
 import java.io.IOException;
@@ -34,16 +32,17 @@ public class EmployeeController extends HttpServlet {
  EmployeeService eService = new EmployeeService();
  
   // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
- EmployeeBean EmployeeBean = request.getParameter(eService.search(id , password));
+ EmployeeBean employeeBean = new EmployeeBean();
+employeeBean= eService.search(id , password);
  
   // 問④ nullの部分に適切な引数をセットする。
-request.setAttribute("EmployeeBean", EmployeeBean);
+request.setAttribute("EmployeeBean", employeeBean);
  
  } catch (Exception e) {
  e.printStackTrace();
  } finally {
  ServletContext context = this.getServletContext();
- RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
+ RequestDispatcher dispatcher = context.getRequestDispatcher("/Index.jsp");
  dispatcher.forward(request, response);
  }
  }

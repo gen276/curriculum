@@ -14,7 +14,7 @@ public class EmployeeBean {
         this.Id = Id;
     }
     
-    public String Id() {
+    public String getId() {
         return Id;
     }
     
